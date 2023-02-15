@@ -1,0 +1,254 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 16px;
+  overflow: hidden;
+}
+
+.notification {
+  position: fixed;
+  background-color: #6e9ecf;
+  z-index: 2;
+  top: 24px;
+  right: 24px;
+  white-space: nowrap;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 5px;
+  padding: 8px 16px;
+  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
+  transition: 300ms;
+}
+
+.notification p:first-child {
+  font-weight: bold;
+}
+
+.hide-notification {
+  transform: translateX(200%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show-notification {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date span {
+  font-size: 16px;
+  padding-left: 16px;
+}
+
+.clue {
+  display: flex;
+}
+.clue label {
+  display: flex;
+  cursor: pointer;
+}
+.clue__message {
+  opacity: 0;
+  padding: 16px;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  margin-right: 16px;
+  transition: 300ms;
+}
+
+#clue-opener {
+  display: none;
+}
+#clue-opener:checked ~ .clue__message {
+  opacity: 1;
+}
+
+.form {
+  border: 1px solid #eee;
+  padding: 16px;
+  margin: 20px auto;
+  border-radius: 10px;
+  display: flex;
+  max-width: 500px;
+  flex-direction: column;
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+.form__title {
+  margin: 0;
+}
+.form__opener {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+}
+.form__opener:before, .form__opener:after {
+  content: "";
+  width: 80%;
+  height: 2px;
+  background-color: #000;
+  transition: 300ms;
+}
+.form__opener:before {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.form__body {
+  height: 0;
+  opacity: 0;
+  transition: 300ms;
+}
+.form__label {
+  font-weight: bold;
+  margin-top: 30px;
+  display: block;
+}
+.form__input {
+  border: 1px solid #eee;
+  padding: 8px;
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+}
+.form__input:hover, .form__input:focus {
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+.form__input,
+.form input[type=color] {
+  display: block;
+  margin-top: 12px;
+  transition: 300ms;
+}
+.form input[type=color] {
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+.form input[type=color]:hover {
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+.form input[type=color]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.form input[type=color]::-webkit-color-swatch {
+  border: none;
+}
+.form__button {
+  margin-top: 30px;
+}
+
+#form-opener {
+  display: none;
+}
+#form-opener:checked ~ .form__opener:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+#form-opener:checked ~ .form__opener:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+#form-opener:checked ~ .form__body {
+  height: auto;
+  opacity: 1;
+}
+
+table {
+  margin: 40px auto;
+}
+
+.event {
+  position: relative;
+  font-size: 14px;
+  border: 0;
+  padding: 8px 5px;
+  min-width: 200px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.delete-marker:before,
+.delete-marker:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  top: 12px;
+  right: 8px;
+  background-color: #212121;
+  cursor: pointer;
+  transition: 300ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.delete-marker:before {
+  transform: rotate(45deg);
+}
+
+.delete-marker:after {
+  transform: rotate(-45deg);
+}
+
+.event:hover .delete-marker:before,
+.event:hover .delete-marker:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bigTime,
+.smallTime {
+  text-align: center;
+}
+
+.bigTime {
+  font-size: 16px;
+}
+
+.smallTime {
+  font-size: 12px;
+}
+
+.v-hidden {
+  visibility: hidden;
+}
+
+.d-none {
+  display: none;
+}
+
+.form__opener:before, .form__opener:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: green;
+  color: #fff;
+  border: 0;
+  transition: 300ms;
+}
+.button:hover {
+  background-color: #039903;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
